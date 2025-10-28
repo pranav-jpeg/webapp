@@ -17,5 +17,8 @@ app.post('/submit', (req, res) => {
   const newUser = new User({ username: req.body.username, email: req.body.email });
   newUser.save().then(() => res.send('Saved to database')).catch(() => res.send('Error'));
 });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.listen(process.env.PORT || 3000, () => console.log('Server started'));
