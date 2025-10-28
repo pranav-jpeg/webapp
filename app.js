@@ -30,4 +30,7 @@ const port = process.env.PORT || 3000;
 console.log('Static folder:', path.join(__dirname, 'public'));
 console.log('Starting server on port:', port);
 
+app.get('/test', (req, res) => {
+  res.send('Test route works!');
+});
 app.listen(port, () => console.log(`Server started on port ${port}`));
